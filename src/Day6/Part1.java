@@ -29,60 +29,36 @@ public class Part1 {
                         if (charMatrix[i - 1][j] != '#') {
                             charMatrix[i][j] = 'x';
                             charMatrix[i - 1][j] = '^';
-                            if (i-1==0) {
-                                cont = false;
-                            }
                         } else {
                             charMatrix[i][j] = 'x';
                             charMatrix[i][j + 1] = '>';
-                            if (j+1==charMatrix[i].length-1) {
-                                cont = false;
-                            }
                         }
 
                     } else if (charMatrix[i][j] == '>') {
                         if (charMatrix[i][j + 1] != '#') {
                             charMatrix[i][j] = 'x';
                             charMatrix[i][j + 1] = '>';
-                            if (j+1==charMatrix[i].length-1) {
-                                cont = false;
-                            }
                         } else {
                             charMatrix[i][j] = 'x';
                             charMatrix[i + 1][j] = 'v';
-                            if (i+1==charMatrix.length-1) {
-                                cont = false;
-                            }
                         }
 
                     } else if (charMatrix[i][j] == 'v') {
                         if (charMatrix[i + 1][j] != '#') {
                             charMatrix[i][j] = 'x';
                             charMatrix[i + 1][j] = 'v';
-                            if (i+1==charMatrix.length-1) {
-                                cont = false;
-                            }
                         } else {
                             charMatrix[i][j] = 'x';
                             charMatrix[i][j - 1] = '<';
-                            if (j-1==0) {
-                                cont = false;
-                            }
                         }
                     }
                     else if (charMatrix[i][j] == '<') {
                         if (charMatrix[i][j-1] != '#') {
                             charMatrix[i][j] = 'x';
                             charMatrix[i][j-1] = '<';
-                            if (j-1==0) {
-                                cont = false;
-                            }
                         } else {
                             charMatrix[i][j] = 'x';
                             charMatrix[i-1][j] = '^';
-                            if (i-1==0) {
-                                cont = false;
-                            }
                         }
                     }
                 }
